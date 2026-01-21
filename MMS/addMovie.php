@@ -1,4 +1,4 @@
-<?php 
+<?php
 
 include_once('config.php');
 
@@ -9,16 +9,16 @@ if(isset($_POST['submit'])){
     $movie_rating=$_POST['movie_rating'];
     $movie_image=$_POST['movie_image'];
 
-    $sql="INSERT INTO movies(movie_name,movie_desc,movie_quality,movie_rating,movie_images VALUES 
-    :movie_name,:movie_desc,:movie_quality,:movie_rating,:movie_image";
+    $sql="INSERT INTO movies(movie_name,movie_desc,movie_quality,movie_rating,movie_image) VALUES
+    (:movie_name,:movie_desc,:movie_quality,:movie_rating,:movie_image)";
 
-    $inserMovie=$conn->prepare($sql);
+    $insertMovie=$conn->prepare($sql);
 
     $insertMovie->bindParam(':movie_name',$movie_name);
-    $insertMovie->bindParam(':movie_desc',$movie_name);
-    $insertMovie->bindParam(':movie_quality',$movie_name);
-    $insertMovie->bindParam(':movie_rating',$movie_name);
-    $insertMovie->bindParam(':movie_image',$movie_name);
+    $insertMovie->bindParam(':movie_desc',$movie_desc);
+    $insertMovie->bindParam(':movie_quality',$movie_quality);
+    $insertMovie->bindParam(':movie_rating',$movie_rating);
+    $insertMovie->bindParam(':movie_image',$movie_image);
 
     $insertMovie->execute();
 

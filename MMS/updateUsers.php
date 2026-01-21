@@ -16,5 +16,5 @@ if(isset($_POST['submit'])){
     $prep->bindParam(':username',$username);
     $prep->bindParam(':email',$email);
     $prep->execute();
-    header('Location:;dashboard.php');
+    header('Location:dashboard.php');
 }
